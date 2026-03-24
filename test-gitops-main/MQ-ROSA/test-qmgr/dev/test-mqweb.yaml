@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: test-mqwebuserconfigmap
+  name: $params.project-mqwebuserconfigmap
   namespace: int
 data:
   mqwebuser.xml: |
@@ -73,4 +73,3 @@ data:
         </openidConnectClient>
         <jndiEntry jndiName="icp4iPlatformServicesUrl" value="${env.MQ_CP4I_SERVICES_URL}/v1"/>
         <jndiEntry jndiName="integrationKeycloakUrl" value="${env.MQ_KEYCLOAK_ENDPOINT_URL}"/>
-    </server>

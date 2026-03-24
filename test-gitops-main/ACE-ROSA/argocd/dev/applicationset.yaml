@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/TapestryESB/test-gitops.git
+        repoURL: https://github.com/TapestryESB/$params.repo-gitops.git
         revision: HEAD
         files:
         - path: "ACE-ROSA/**/overlays/**/dev_config.json"
@@ -16,7 +16,7 @@ spec:
       annotations:
         notifications.argoproj.io/subscribe.on-sync-succeeded.tapestry: uasim@tapestry.com;nali@tapestry.com
     spec:
-      project: $params.project #argo project name
+  project: $params.project
       source:
         repoURL: https://github.com/TapestryESB/$params.repo-gitops.git
         targetRevision: HEAD

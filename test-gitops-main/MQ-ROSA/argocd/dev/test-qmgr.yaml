@@ -1,19 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-queue-manager
+  name: $params.project-queue-manager
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: int
     server: https://kubernetes.default.svc
-  project: test
+  project: $params.project
   source:
     path: MQ-ROSA/test-qmgr/dev/
-    repoURL: https://github.com/TapestryESB/test-gitops.git
+    repoURL: https://github.com/TapestryESB/$params.repo-gitops.git
     targetRevision: main
   syncPolicy:
     automated:
       prune: true  
-      selfHeal: true

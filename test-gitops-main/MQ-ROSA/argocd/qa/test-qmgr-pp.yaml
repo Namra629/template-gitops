@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: test-mq-applicationset-pp
+  name: $params.project-mq-applicationset-pp
   namespace: openshift-gitops
 spec:
   generators:
     - git:
-        repoURL: https://github.com/TapestryESB/test-gitops.git
+        repoURL: https://github.com/TapestryESB/$params.repo-gitops.git
         revision: HEAD
         files:
         - path: "MQ-ROSA/**/pp_config.json"
@@ -14,11 +14,10 @@ spec:
     metadata:
       name: '{{microservice}}-{{env}}'
     spec:
-      project: test
+  project: $params.project
       source:
-        repoURL: https://github.com/TapestryESB/test-gitops.git
+        repoURL: https://github.com/TapestryESB/$params.repo-gitops.git
         targetRevision: HEAD
         path: "MQ-ROSA/{{folder}}/{{env}}/"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{namespace}}'
