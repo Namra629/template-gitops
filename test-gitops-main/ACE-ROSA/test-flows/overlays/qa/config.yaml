@@ -1,0 +1,12 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  name: test-flows
+  namespace: int
+spec:
+  configurations: 
+    - ace-cp4i-keystore
+    - ace-cp4i-keystore-dbparms
+    - test-flows-common-policy
+    - test-flows-policy
+    - test-flows-serverconf

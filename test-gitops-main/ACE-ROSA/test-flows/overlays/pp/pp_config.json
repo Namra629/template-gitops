@@ -1,0 +1,6 @@
+{
+    "microservice": "test-flows",
+    "folder": "test-flows",
+    "env": "pp",
+    "namespace": "pp"
+}

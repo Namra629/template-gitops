@@ -1,0 +1,6 @@
+resources:
+  - configmap.yaml
+  - qm-template.yaml
+#  - route.yaml
+commonAnnotations:
+  configuration/mqsc-version: '35115911'
