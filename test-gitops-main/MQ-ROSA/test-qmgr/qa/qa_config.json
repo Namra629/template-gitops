@@ -1,6 +1,0 @@
-{
-    "microservice": "test-qmgr",
-    "folder": "test-qmgr",
-    "env": "qa",
-    "namespace": "int"
-}
