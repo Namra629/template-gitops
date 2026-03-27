@@ -1,0 +1,11 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  name: $(params.project)-flows
+  namespace: int
+spec:
+  telemetry:
+    tracing:
+      openTelemetry:
+        enabled: true
+        endpoint: '172.30.142.64:4317'

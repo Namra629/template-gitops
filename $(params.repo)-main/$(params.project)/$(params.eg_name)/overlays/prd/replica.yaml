@@ -1,0 +1,7 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  name: $(params.project)-flows
+  namespace: int
+spec:
+  replicas: 0
