@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: test-mqsc-configmap
+  name: $(params.project)-mqsc-configmap
 data:
   default.mqsc: |
       ALTER QMGR CHLAUTH (DISABLED)

@@ -3,7 +3,7 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: test-multi-qmgr
+  name: $(params.project)-multi-qmgr
   namespace: int
   annotations:
     argocd.argoproj.io/sync-wave: "300"

@@ -1,7 +1,7 @@
 apiVersion: appconnect.ibm.com/v1beta1
 kind: IntegrationRuntime
 metadata:
-  name: test-flows
+  name: $(params.project)-flows
   namespace: int
 spec:
   template:
@@ -15,4 +15,3 @@ spec:
                     operator: In
                     values:
                       - test-flows
-              topologyKey: kubernetes.io/hostname
