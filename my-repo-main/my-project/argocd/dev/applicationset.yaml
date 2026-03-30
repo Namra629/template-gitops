@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-project-ace-applicationset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/TapestryESB/my-repo-gitops.git
+        revision: HEAD
+        files:
+        - path: "ACE-ROSA/**/overlays/**/dev_config.json"
+  template:
+    metadata:
+      name: '{{microservice}}'
+      annotations:
+        notifications.argoproj.io/subscribe.on-sync-succeeded.tapestry: uasim@tapestry.com;nali@tapestry.com
+    spec:
+  project: my-project
+      source:
+        repoURL: https://github.com/TapestryESB/my-repo-gitops.git
+        targetRevision: HEAD
+        path: "ACE-ROSA/{{folder}}/overlays/dev/"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: int
+      ignoreDifferences:
+        - group: appconnect.ibm.com
+          kind: IntegrationRuntime
+          jsonPointers:
+            - /spec/configurations
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true  

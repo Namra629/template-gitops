@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-project-ace
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: openshift-gitops ## incase of openshift change this to openshift-gitops
+    server: https://kubernetes.default.svc
+  project: my-project
+  source:
+    path: ACE-ROSA/argocd/qa/  ## path where it reads other argo manifists
+    repoURL: https://github.com/TapestryESB/my-repo-gitops.git
+    targetRevision: main
