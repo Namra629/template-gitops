@@ -1,14 +1,14 @@
 apiVersion: appconnect.ibm.com/v1beta1
 kind: IntegrationRuntime
 metadata:
-  name: $(params.eg_name)-flows
+  name: $(params.eg_name)
   namespace: int
 spec:
   template:
     spec:
       containers:
         - name: runtime
-          image: 407690150649.dkr.ecr.us-east-1.amazonaws.com/openshift-cicd:test-flows-qa-f6fd3dba58f9403bf49dadad8eb1285e84c30225
+          image: 407690150649.dkr.ecr.us-east-1.amazonaws.com/openshift-cicd:test-qa-f6fd3dba58f9403bf49dadad8eb1285e84c30225
           resources:
             limits:
               cpu: 300m

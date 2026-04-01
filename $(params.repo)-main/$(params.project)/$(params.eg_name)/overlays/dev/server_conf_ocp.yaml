@@ -1,7 +1,7 @@
 apiVersion: appconnect.ibm.com/v1beta1
 kind: Configuration
 metadata:
-  name: $(params.eg_name)-flows-serverconf
+  name: $(params.eg_name)-serverconf
   namespace: int
   annotations:
     argocd.argoproj.io/sync-wave: "0"

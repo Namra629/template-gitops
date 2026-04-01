@@ -1,7 +1,7 @@
 apiVersion: appconnect.ibm.com/v1beta1
 kind: IntegrationRuntime
 metadata:
-  name: $(params.eg_name)-flows
+  name: $(params.eg_name)
   namespace: int
 spec:
   template:
@@ -14,4 +14,4 @@ spec:
                   - key: app.kubernetes.io/name
                     operator: In
                     values:
-                      - test-flows
+                      - test
