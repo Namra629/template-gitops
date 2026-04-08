@@ -103,7 +103,7 @@ spec:
     collector: {}
     enabled: false
     namespace: ""
-  version: 9.4.0.17-r1
+  version: $(params.version)
   telemetry:
      tracing:
        instana:

@@ -30,4 +30,4 @@ spec:
       imagePullSecrets:
         - name: ecr-entitlement-key
   replicas: 1
-  version: 12.0.3.0-r1
+  version: $(params.version)

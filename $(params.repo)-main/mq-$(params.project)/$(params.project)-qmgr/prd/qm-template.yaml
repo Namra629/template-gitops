@@ -87,7 +87,7 @@ spec:
     collector: {}
     enabled: false
     namespace: ""
-  version: 12.0.0.9-r11
+  version: $(params.version)
   web:
     enabled: true
   pki:
